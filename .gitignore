@@ -1,0 +1,18 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Django migrations
+*/migrations/
+*.sqlite3
+
+# Environment
+.env
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
