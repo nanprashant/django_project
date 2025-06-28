@@ -19,6 +19,7 @@ from django.urls import path
 from django.urls import include
 from blog.views import home
 from users import views as user_views
+from django.contrib.auth import views as import_views
 
 
 urlpatterns = [
@@ -26,6 +27,9 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('',home, name='blog-home'),
     path('register/', user_views.register, name='register'),
+    path('login/',import_views.LoginView.as_view(template_name='users/login.html'),name='login'),
+    path('logout/',import_views.LogoutView.as_view(template_name='users/logout.html'),name='logout')
     
 
 ]
+ 
