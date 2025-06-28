@@ -33,7 +33,7 @@ pipeline {
             steps {
                 echo 'Running tests...'
                 sh '''
-                    source venv/bin/activate
+                    . venv/bin/activate
                     pytest
                 '''
             }
