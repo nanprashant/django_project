@@ -43,7 +43,7 @@ pipeline {
             steps {
                 echo 'Collecting static files...'
                 sh '''
-                    source venv/bin/activate
+                    . venv/bin/activate
                     python manage.py collectstatic --noinput
                 '''
             }
@@ -53,7 +53,7 @@ pipeline {
             steps {
                 echo "Deploying $PROJECT_NAME..."
                 sh '''
-                    source venv/bin/activate
+                    . venv/bin/activate
                     # Add deployment script here
                     echo "Deployment done."
                 '''
