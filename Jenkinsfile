@@ -29,15 +29,18 @@ pipeline {
             }
         }
 
-        stage('Run Tests') {
+                stage('Run Tests') {
             steps {
                 echo 'Running tests...'
                 sh '''
-                    . venv/bin/activate
-                    pytest
+                    bash -c "
+                        source venv/bin/activate
+                        pytest
+                    "
                 '''
             }
         }
+
 
         stage('Build & Collect Static Files') {
             steps {
