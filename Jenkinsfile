@@ -33,7 +33,8 @@ pipeline {
             steps {
                 echo 'Running tests...'
                 
-                sh './venv/bin/pytest'
+
+                sh '. /venv/bin/pytest'
             }
         }
 
