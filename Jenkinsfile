@@ -32,12 +32,8 @@ pipeline {
                 stage('Run Tests') {
             steps {
                 echo 'Running tests...'
-                sh '''
-                    bash -c "
-                        source venv/bin/activate
-                        pytest
-                    "
-                '''
+                
+                sh './venv/bin/pytest'
             }
         }
 
