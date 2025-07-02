@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Receipt</title>
+  <style>
+    @media print {
+  body {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+  }
+  .receipt {
+    width: 600px;
+    margin: auto;
+  }
+}
+
+    .header {
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .header2 {
+      text-align: center;
+      font-size: 12px;
+      font-weight: normal;
+    }
+    .main-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid #000;
+    }
+    .main-table td {
+      border: 1px solid #000;
+      padding: 10px;
+      vertical-align: top;
+    }
+    .section-content {
+      width: 100%;
+    }
+    .section-content td, .section-content th {
+      border: none !important;
+      padding: 6px;
+      font-size: 14px;
+      vertical-align: top;
+    }
+    .section-content th {
+      text-align: left;
+      font-weight: bold;
+    }
+    .amount {
+      font-weight: bold;
+    }
+    .section-content label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="receipt">
+    <div class="header">BHAGYODAYA HOSPITAL</div>
+  <div class="header">Opposite Nirmal School, Ram Nagar Road, Vijayapur - 586109</div>
+  <div class="header2" style="margin-bottom: 20px;">Timings: Available 24 Hours and 7 Days</div>
+ 
+    <table class="main-table">
+      <!-- Header Section -->
+      <tr>
+        <td colspan="5">
+          <div style="text-align: center; font-size: 11px; font-weight: bold; margin-top: 10px;">Payment Receipt</div>
+        </td>
+      </tr>
+
+      <!-- Patient Info Section -->
+      <tr>
+        <td colspan="5">
+          <table class="section-content">
+            <tr>
+              <td><label>Patient Name:</label> Prakash N Paki</td>
+              <td><label>Receipt No:</label> 125</td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <label>Address:</label> C/O Prakash N Paki, Manur layout Bandal Road Sindagi, PO: Sindagi, DIST: Vijayapura, Karnataka, 586128.
+              </td>
+            </tr>
+            <tr>
+              <td><label>Age/Gender:</label> 55 Years/Male</td>
+              <td><label>Consulting Dr:</label> Dr. Vikram Sindgikar</td>
+            </tr>
+            <tr>
+              <td><label>Department:</label> Surgery</td>
+              <td><label>Receipt Date:</label> 23/05/2025</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <!-- Payment Info Section -->
+      <tr>
+        <td colspan="5">
+          <table class="section-content">
+            <tr>
+              <th>Paid By</th>
+              <th>Date</th>
+              <th>Card/Cheque/Trans.no.</th>
+              <th>Bank Name</th>
+              <th>Branch Name</th>
+            </tr>
+            <tr>
+              <td>Cash</td>
+              <td>23/05/2025</td>
+              <td>Cash</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td colspan="3"><label>Amount in words:</label> Rs. Thirty Two Thousand Three Hundred Only</td>
+              <td colspan="2"><div class="amount">Total Amount: Rs. 32300</div></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <!-- Remark Section -->
+      <tr>
+  <td colspan="5">
+    <label>Received from:</label> BHAGYODAYA HOSPITAL towards consultation and medical services with thanks from Sri. Prakash N Paki.<br><br>
+    <label>Remark:</label>  For total amount, refer to the breakup shared seperately.
+    <div style="height: 150px;"></div>
+  </td>
+</tr>
+    </table>
+  </div>
+</body>
+</html>

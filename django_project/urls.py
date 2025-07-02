@@ -20,7 +20,8 @@ from django.urls import include
 from blog.views import home
 from users import views as user_views
 from django.contrib.auth import views as import_views
-
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,8 +29,9 @@ urlpatterns = [
     path('',home, name='blog-home'),
     path('register/', user_views.register, name='register'),
     path('login/',import_views.LoginView.as_view(template_name='users/login.html'),name='login'),
-    path('logout/',import_views.LogoutView.as_view(template_name='users/logout.html'),name='logout')
+    path('logout/',import_views.LogoutView.as_view(template_name='users/logout.html'),name='logout'),
+    path('profile',user_views.profile,name="user_profile")
     
 
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
  
