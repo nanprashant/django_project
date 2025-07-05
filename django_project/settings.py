@@ -45,11 +45,13 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+   
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+     'blog.middleware.LoginRequiredMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -131,3 +133,5 @@ LOGIN_REDIRECT_URL='blog-home'
 
 MEDIA_ROOT=  os.path.join(BASE_DIR,"media")
 MEDIA_URL= "/media/"
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'

@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Post
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 posts=[
         {            'author': 'John Doe',
@@ -15,6 +16,7 @@ posts=[
 
         }
 ]
+@login_required
 def home(request):
     context= {'posts': Post.objects.all()
             }   # This will fetch all posts from the database
