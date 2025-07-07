@@ -2,11 +2,17 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-
+import environ
+from pathlib import Path
+# Load .env manually BEFORE Django uses it
+BASE_DIR = Path(__file__).resolve().parent
+env = environ.Env()
+env.read_env(os.path.join(BASE_DIR, '.env'))
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_project.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE',env('DJANGO_SETTINGS_MODULE') )
+    print(f"Using settings module: {os.environ.get('DJANGO_SETTINGS_MODULE')}")
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

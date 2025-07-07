@@ -2,6 +2,8 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.forms import UserCreationForm
 from .forms import UserRegisterForm,UserUpdateForm,ProfileUpdateForm
 from django.contrib import messages
+from django.views.generic import ListView
+
 # Create your views here.
 
 def register(request):
@@ -40,3 +42,7 @@ def profile(request):
     }
 
     return render(request, 'users/profile.html', context)
+
+
+
+
