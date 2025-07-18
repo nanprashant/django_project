@@ -19,6 +19,7 @@ import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
+print(f'The Base Directory is - {BASE_DIR}')
 env=environ.Env()
 env.read_env(os.path.join(BASE_DIR, '.env'))
 print("\n🔧 Django-related environment variables:")
@@ -44,8 +45,10 @@ ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=[])
 
 INSTALLED_APPS = [
     'blog.apps.BlogConfig',
+    'rest_framework',
     'django.contrib.admin',
     'crispy_forms',
+    'apis.apps.ApisConfig',
     'crispy_bootstrap4',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -97,19 +100,7 @@ DATABASES = {
     }
 }
 
-#Logging
-LOGGING = {
-    'version': 1,
-    'handlers': {
-        'console': {'class': 'logging.StreamHandler'},
-    },
-    'loggers': {
-        'django.db.backends': {
-            'handlers': ['console'],
-            'level': 'DEBUG',
-        },
-    },
-}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
